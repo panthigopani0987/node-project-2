@@ -34,7 +34,6 @@ app.post('/addData',(req,res)=>{
 // deletedata
 app.get('/deleteData/:id',(req,res)=>{
     let id = req.params.id;
-    console.log(id);
     let ans = data.filter((val)=>{
         return val.t_id != id;
     });
@@ -48,7 +47,6 @@ app.get('/updateData/:id',(req,res)=>{
     let ans = data.filter((val)=>{
         return val.t_id == id;
     });
-    console.log(ans[0]);
     return res.render('update',{
         onlyData : ans[0],
     });
